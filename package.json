@@ -1,0 +1,24 @@
+{
+    "name": "github-top-5-starred",
+    "version": "1.0.0",
+    "description": "Calls GitHub api and returns top 5 starred repos for a user-supplied language",
+    "scripts": {
+        "start": "ts-node index.ts"
+    },
+    "author": "Aaron Scherer <aequasi@gmail.com>",
+    "homepage": "https://sebrands.atlassian.net/wiki/spaces/DEVHOME/pages/474316813/Dev+Homework",
+    "dependencies": {
+        "chalk": "^2.4.0",
+        "cli-table": "^0.3.1",
+        "github-api": "^3.0.0",
+        "ora": "^2.0.0",
+        "prompt": "^1.0.0",
+        "reflect-metadata": "^0.1.12",
+        "request-promise": "^4.2.2",
+        "ts-node": "^6.0.0",
+        "typescript": "^2.8.3"
+    },
+    "devDependencies": {
+        "@types/request-promise": "^4.1.41"
+    }
+}
