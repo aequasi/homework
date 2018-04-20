@@ -30,7 +30,7 @@ const search = (new GitHub()).search();
 
         const table = new Table({
             head: ["Name", "Description", "Stars"],
-            colWidths: [50, 200, 50]
+            colWidths: [50, 100, 50]
         });
         firstFive.forEach(x => {
             table.push([x.full_name, x.description, x.stargazers_count])
