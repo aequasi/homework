@@ -12,10 +12,18 @@ const search = (new GitHub()).search();
         const language = await askForLanguage();
 
         const spinner = ora(chalk.green(`Searching for high-starred ${language} repos`)).start();
-        const repos = await search.forRepositories({
-            q:    `language:${language}`,
-            sort: "stars",
-        });
+        let repos;
+        try {
+            repos = await search.forRepositories({
+                q:    `language:${language}`,
+                sort: "stars",
+            });
+        } catch (e) {
+            spinner.fail("There was an error communicating with the GitHub API");
+            process.exit(1);
+
+            return;
+        }
         const firstFive = repos.data.splice(0, 5);
         spinner.succed();
 
