@@ -10,6 +10,7 @@ const search = (new GitHub()).search();
 (
     async () => {
         const language = await askForLanguage();
+        console.log("");
 
         const spinner = ora(chalk.green(`Searching for high-starred ${language} repos`)).start();
         let repos;
@@ -25,9 +26,12 @@ const search = (new GitHub()).search();
             return;
         }
         const firstFive = repos.data.splice(0, 5);
-        spinner.succed();
+        spinner.succeed();
 
-        const table = new Table({head: ["Name", "Description", "Stars"]});
+        const table = new Table({
+            head: ["Name", "Description", "Stars"],
+            colWidths: [50, 200, 50]
+        });
         firstFive.forEach(x => {
             table.push([x.full_name, x.description, x.stargazers_count])
         });
