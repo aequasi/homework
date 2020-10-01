@@ -6,7 +6,6 @@ import * as ora from "ora";
 
 const search = (new GitHub()).search();
 
-
 (
     async () => {
         const language = await askForLanguage();
